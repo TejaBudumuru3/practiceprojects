@@ -1,0 +1,1739 @@
+/* s:\Cloned Projects\Practice-projects\route practice\src\index.css */
+/* Dark theme by default */
+:root {
+  color-scheme: dark;
+  --text-color: #e2e7ef;       /* Light text for dark theme */
+  --text-color-strong: #ffffff; /* Bolder light text for dark theme */
+  --text-color-muted: #8c939d;  /* Muted light text for dark theme */
+  --border-color: #495057;     /* Darker border for dark theme */
+  --sidebar-bg: #2c3034;       /* Darker sidebar for dark theme */
+  /* --card-bg: #25292d;    /* Used if cards are not transparent */
+  --primary-color: #0d6efd; 
+  /* Dark theme colors */
+  /* --color-bg: #000000; */
+  --background-color: rgb(10, 10, 10);
+  --color-bg-secondary: #1e1e1e;
+  --color-bg-tertiary: #2a2a2a;
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+  --color-text-muted: #757575;
+  --color-border: #333333;
+  --color-border-hover: #444444;
+  --color-primary-accent: #1e90ff;
+  --color-primary-accent-hover: #4da6ff;
+  --color-primary-accent-text: #ffffff;
+  --hero-text: #f0f0f0;
+
+  /* Shadows */
+  --color-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --color-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --color-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2);
+
+  /* Form elements */
+  --color-input-bg: #1e1e1e;
+  --color-input-border: #383838;
+  --color-input-focus-border: #1e90ff;
+  --color-input-focus-shadow: 0 0 0 3px rgba(30, 144, 255, 0.3);
+
+  /* Links */
+  --color-link: #1e90ff;
+  --color-link-hover: #4da6ff;
+}
+
+/* --------------------------------------------------------------------------
+/*                                 Base Reset                                 */
+/* -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* Smooth transitions for theme changes and interactions */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                              CSS Variables                                 */
+/* -------------------------------------------------------------------------- */
+:root {
+  /* Typography */
+  --font-primary: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  --font-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
+    Courier, monospace;
+
+  /* Light Theme (Default) */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f9fafb; /* Slightly off-white for cards, sections */
+  --color-bg-tertiary: #f3f4f6; /* For subtle hover states or less prominent backgrounds */
+  --color-text-primary: #111827; /* Dark gray for primary text */
+  --color-text-secondary: #6b7280; /* Medium gray for secondary text */
+  --color-text-muted: #9ca3af; /* Lighter gray for muted text or placeholders */
+  --color-border: #e5e7eb; /* Light gray for borders */
+  --color-border-hover: #d1d5db; /* Slightly darker border on hover */
+  --color-primary-accent: #0070f3; /* Vercel Blue - strong and recognizable */
+  --color-primary-accent-hover: #0056b3; /* Darker Vercel Blue for hover */
+  --color-primary-accent-text: #ffffff; /* Text on primary accent elements */
+  --color-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --color-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --color-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;
+  --color-input-focus-border: var(--color-primary-accent);
+  --color-input-focus-shadow: 0 0 0 3px rgba(0, 112, 243, 0.2);
+  --color-link: var(--color-primary-accent);
+  --color-link-hover: var(--color-primary-accent-hover);
+}
+
+/* Dark theme styles */
+[data-theme="dark"],
+[data-theme="dark"] body {
+  /* Dark Theme Overrides */
+  --color-bg: #000000; /* Dark, but not pure black for better depth */
+  --color-bg-secondary: #1e1e1e;
+  --color-bg-tertiary: #2a2a2a;
+  --color-text-primary: #fffffffa; /* Off-white, easier on the eyes */
+  --color-text-secondary: #a0a0a0; /* Lighter gray for secondary text */
+  --color-text-muted: #757575;
+  --color-border: #333333;
+  --color-border-hover: #444444;
+  /* --color-primary-accent: #0070f3; /* Keeping primary blue consistent, or adjust if needed */
+  /* --color-primary-accent-hover: #3b82f6; */
+  --color-shadow-sm: 0 1px 2px 0 rgba(255, 255, 255, 0.03);
+  --color-shadow-md: 0 4px 6px -1px rgba(255, 255, 255, 0.05),
+    0 2px 4px -1px rgba(255, 255, 255, 0.04);
+  --color-shadow-lg: 0 10px 15px -3px rgba(255, 255, 255, 0.05),
+    0 4px 6px -2px rgba(255, 255, 255, 0.04);
+  --color-input-bg: #1e1e1e;
+  --color-input-border: #383838;
+  /* --color-input-focus-border: var(--color-primary-accent); */
+  --color-input-focus-shadow: 0 0 0 3px rgba(0, 112, 243, 0.3);
+  /* --color-link: var(--color-primary-accent); */
+  /* --color-link-hover: var(--color-primary-accent-hover); */
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Global Styles                               */
+/* -------------------------------------------------------------------------- */
+html {
+  font-size: 16px; /* Base font size */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Typography                                 */
+/* -------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.85em; /* Use em for responsive margins */
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 2.25rem;
+} /* ~36px */
+h2 {
+  font-size: 1.875rem;
+} /* ~30px */
+h3 {
+  font-size: 1.5rem;
+} /* ~24px */
+h4 {
+  font-size: 1.25rem;
+} /* ~20px */
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--color-link-hover);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Interactive Elements                           */
+/* -------------------------------------------------------------------------- */
+button {
+  display: inline-flex; /* Use inline-flex for better alignment of content */
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-primary-accent-text);
+  background-color: var(--color-primary-accent);
+  border: 1px solid transparent;
+  border-radius: 0.375rem; /* 6px */
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+button:hover {
+  background-color: var(--color-primary-accent-hover);
+}
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--color-primary-accent);
+  outline-offset: 2px;
+  box-shadow: var(--color-input-focus-shadow);
+}
+button:disabled {
+  background-color: var(--color-text-muted);
+  border-color: var(--color-text-muted);
+  color: var(--color-bg-secondary);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+button.secondary {
+  color: var(--color-primary-accent);
+  background-color: transparent;
+  border-color: var(--color-primary-accent);
+}
+button.secondary:hover {
+  background-color: var(--color-primary-accent);
+  color: var(--color-primary-accent-text);
+}
+
+button.theme-toggle {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem; /* 14px */
+}
+button.theme-toggle:hover {
+  background-color: var(--color-bg-tertiary);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Forms & Inputs                               */
+/* -------------------------------------------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* 20px */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem; /* 12px 16px */
+  font-size: 1rem; /* 16px */
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-input-bg);
+  background-clip: padding-box;
+  border: 1px solid var(--color-input-border);
+  appearance: none; /* For iOS */
+  border-radius: 0.375rem; /* 6px */
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: var(--color-input-focus-border);
+  outline: 0;
+  box-shadow: var(--color-input-focus-shadow);
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem; /* 8px */
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Layout Components                              */
+/* -------------------------------------------------------------------------- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--color-shadow-sm);
+}
+
+.app-header .brand-link {
+  text-decoration: none; /* Ensure link itself has no underline */
+}
+.app-header .brand-link h1 {
+  margin: 0;
+  font-size: 1.75rem; /* ~28px */
+  color: var(--color-text-primary);
+  font-weight: 700; /* Bolder brand name */
+}
+
+.app-header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 16px */
+}
+
+.app-header nav .user-greeting {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9375rem; /* 15px */
+}
+
+.app-main-content {
+  flex-grow: 1;
+  padding: 2rem 1.5rem; /* 32px 24px, more top/bottom padding */
+  max-width: 1280px; /* Common max-width for content */
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            Component Specific Styles                       */
+/* -------------------------------------------------------------------------- */
+
+/* --- Auth Forms (Signin/Signup) --- */
+.auth-form-container {
+  max-width: 450px;
+  margin: 3rem auto; /* More top/bottom margin */
+  padding: 2.5rem; /* More padding */
+  /* background-color: var(--color-bg-secondary); */
+  background-color: transparent;
+  border-radius: 0.5rem; /* 8px */
+  box-shadow: var(--color-shadow-md);
+  box-shadow: white;
+}
+.auth-form-container h1 {
+  text-align: center;
+  font-size: 1.875rem; /* ~30px */
+  margin-bottom: 1.5rem; /* 24px */
+}
+
+.auth-form-link-container {
+  margin-top: 2rem; /* 32px */
+  text-align: center;
+  font-size: 0.9375rem; /* 15px */
+}
+.auth-form-link-container p {
+  margin-bottom: 0.75rem; /* 12px */
+  color: var(--color-text-secondary);
+}
+
+/* --- Generate Content Section --- */
+.generate-content-container {
+  margin: 2rem auto; /* Center it more explicitly */
+  padding: 2rem; /* 32px */
+  /* background-color: var(--color-bg-secondary);
+   */
+  border-radius: 0.5rem; /* 8px */
+  /* box-shadow: var(--color-shadow-md); */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px */
+  max-width: 900px;
+}
+.generate-content-container input[type="text"] {
+  padding: 1rem 1.25rem; /* 16px 20px */
+  background-color: transparent;
+  padding: 1.5rem 1.65rem; /* Further increased padding: ~24px vertical, ~26px horizontal */
+  border-radius: 1rem; /* Slightly more rounded corners: 10px */
+  font-size: 1.125rem; /* Increased font size: ~18px */
+  height: 8rem; /* Height of input field */
+  padding-bottom: 10%;
+  /* padding-left: 0%; */
+}
+/* Add to your s:\Cloned Projects\Practice-projects\route practice\src\index.css */
+
+/* Main container for sidebar layout */
+.app-container-with-sidebar {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrollbars on the main container */
+}
+
+.app-sidebar {
+  width: 260px; /* ChatGPT-like width */
+  background-color: var(
+    --color-background-sidebar,
+    #202123
+  ); /* Dark background like ChatGPT */
+  color: var(--color-text-sidebar, #ececf1);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  border-right: 1px solid var(--color-border-sidebar, #3a3b3c);
+}
+
+.sidebar-header {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--color-border-sidebar, #3a3b3c);
+}
+
+.new-generation-button {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background-color: transparent;
+  color: var(--color-text-sidebar, #ececf1);
+  border: 1px solid var(--color-border-button-sidebar, #56585a);
+  border-radius: 0.375rem;
+  text-align: left;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.new-generation-button:hover {
+  background-color: var(--color-background-button-sidebar-hover, #2a2b2d);
+}
+
+.sidebar-history {
+  flex-grow: 1;
+  overflow-y: auto; /* Allow history to scroll */
+  padding: 0.75rem;
+}
+
+.history-title {
+  font-size: 0.75rem;
+  color: var(--color-text-muted-sidebar, #8e8ea0);
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sidebar-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-history li {
+  margin-bottom: 0.25rem;
+}
+
+.history-item-button {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background-color: transparent;
+  color: var(--color-text-sidebar, #ececf1);
+  border: none;
+  border-radius: 0.375rem;
+  text-align: left;
+  font-size: 0.875rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.2s ease;
+}
+
+.history-item-button:hover {
+  background-color: var(--color-background-item-sidebar-hover, #2a2b2d);
+}
+
+.no-history-message {
+  color: var(--color-text-muted-sidebar, #8e8ea0);
+  font-style: italic;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Wrapper for header and main content */
+.main-content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent this wrapper from showing scrollbars */
+}
+
+.app-header {
+  /* Your existing header styles */
+  /* Make sure it doesn't overlap with the sidebar if it's not part of the flex flow */
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.app-main-content {
+  flex-grow: 1;
+  overflow-y: auto; /* Allow main content area to scroll */
+  padding: 1.5rem 2rem; /* Or your existing padding */
+  background-color: var(
+    --color-background
+  ); /* Ensure main content has a background */
+}
+/* s:\Cloned Projects\Practice-projects\route practice\src\index.css */
+
+/* ... your existing styles ... */
+
+.app-container-with-sidebar {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  transition: padding-left 0.3s ease-in-out; /* For smoother transition if main content shifts */
+}
+
+/* Sidebar Styles */
+.app-sidebar {
+  width: 260px;
+  background-color: var(--color-background-sidebar, #202123);
+  color: var(--color-text-sidebar, #ececf1);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-right: 1px solid var(--color-border-sidebar, #3a3b3c);
+  transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for sidebar */
+  opacity: 1;
+}
+
+.app-container-with-sidebar.sidebar-closed .app-sidebar {
+  /* This approach hides it completely. For sliding, you'd use transform. */
+  /* For this implementation, we are conditionally rendering it, so this specific
+     CSS for hiding might not be strictly necessary if conditional rendering is enough.
+     However, if you opt to always render and hide with CSS, this is how you'd do it.
+  */
+  width: 0;
+  opacity: 0;
+  overflow: hidden; /* Hide content when width is 0 */
+  padding: 0;
+  border-right: none;
+}
+
+/* Main Content Wrapper */
+.main-content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: margin-left 0.3s ease-in-out; /* Smooth transition for margin */
+  margin-left: 0; /* Default when sidebar is closed or not present */
+}
+
+/* Adjust main content when sidebar is open */
+/* This rule is only needed if the sidebar is NOT part of the flex flow of its parent
+   and is instead absolutely positioned or fixed.
+   Given our current flex setup in app-container-with-sidebar, this might not be needed
+   if the sidebar simply takes up space when present.
+   Let's assume for now the conditional rendering handles the space.
+*/
+/*
+.main-content-wrapper.sidebar-open {
+  margin-left: 260px; // Width of the sidebar
+}
+*/
+
+/* Header adjustments */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-background-nav);
+  color: var(--color-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.header-left-section {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-toggle-button {
+  background: none;
+  border: none;
+  color: var(--color-text); /* Or your desired icon color */
+  font-size: 1.5rem; /* Adjust size of hamburger icon */
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-right: 0.5rem; /* Space between icon and brand */
+  line-height: 1; /* Ensure icon is vertically centered */
+}
+
+.sidebar-toggle-button:hover {
+  opacity: 0.7;
+}
+
+/* ... rest of your .app-sidebar, .sidebar-header, .new-generation-button, etc. styles ... */
+/* Ensure they don't rely on the sidebar always being a fixed width if you use the width:0 approach */
+
+.sidebar-header,
+.sidebar-history {
+  /* Ensure these are hidden properly when sidebar width is 0 */
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+/* In your index.css */
+.profile-menu-widget-container {
+  margin-top: 10px;
+  position: relative;
+  display: inline-block; /* Or block if it should take full width */
+  margin-bottom: 1rem; /* Space below the dropdown widget */
+}
+
+.profile-menu-trigger-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-background-button, transparent);
+  color: var(--color-text);
+  border: 1px solid var(--color-border, transparent);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.profile-menu-trigger-button:hover {
+  background-color: var(--color-background-hover);
+}
+
+.profile-dropdown-menu-on-page {
+  position: absolute;
+  top: 100%;
+  right: 0; /* Aligns dropdown to the right of the trigger */
+  background-color: var(--color-background-card);
+  border: 1px solid var(--color-border);
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1050;
+  min-width: 250px; /* Adjust as needed */
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+}
+
+.profile-dropdown-menu-on-page .dropdown-item {
+  /* ... your existing .dropdown-item styles ... */
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  /* ... etc. ... */
+}
+/* In your index.css */
+
+/* ... existing styles ... */
+
+.app-header nav .profile-menu-widget-container {
+  margin-left: 0.75rem; /* Or adjust as needed */
+}
+
+.header-profile-trigger {
+  /* Style it like other header buttons or as desired */
+  background: none;
+  border: 1px solid transparent; /* Or a visible border */
+  color: var(--color-text);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1rem; /* Match other header elements */
+}
+/* s:\Cloned Projects\Practice-projects\route practice\src\index.css */
+
+/* ... your existing styles ... */
+
+/* Styles for the profile dropdown menu in the HEADER */
+.header-profile-dropdown {
+  position: absolute;
+  top: 100%; /* Position below the trigger button */
+  right: 0; /* Align to the right edge of its container (.profile-menu-widget-container) */
+  background-color: var(
+    --color-background-card,
+    #ffffff
+  ); /* Use card background or a specific dropdown bg */
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 0.375rem; /* Consistent border radius */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* A slightly more pronounced shadow */
+  z-index: 1050; /* CRUCIAL: High z-index to appear above other content */
+  min-width: 220px; /* Adjust as needed */
+  padding: 0.5rem 0; /* Vertical padding for the menu itself */
+  margin-top: 0.25rem; /* Small gap between trigger and menu */
+  list-style: none; /* If you were to use <ul> */
+}
+
+/* General style for items within any dropdown menu on the page */
+.profile-dropdown-menu-on-page .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem; /* Consistent padding for all items */
+  text-align: left;
+  font-size: 0.95rem; /* Consistent font size */
+  color: var(--color-text, #333333);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none; /* For Link components */
+  box-sizing: border-box; /* Ensures padding doesn't expand width unexpectedly */
+  white-space: nowrap; /* Prevent text wrapping if not desired */
+}
+/* ...existing code... */
+
+.twitter-button {
+    @apply transition-all duration-300;
+}
+
+.twitter-button:hover {
+    @apply transform -translate-y-0.5;
+}
+
+.twitter-auth-status {
+    @apply text-sm text-gray-600 mt-1;
+}
+.profile-dropdown-menu-on-page .dropdown-item:hover {
+  background-color: var(--color-background-hover, #f5f5f5);
+  color: var(
+    --color-text-hover,
+    var(--color-primary-accent)
+  ); /* Optional: change text color on hover */
+}
+
+/* Specific styling for the user greeting item within the header dropdown */
+.header-profile-dropdown .user-greeting-item {
+  color: var(
+    --color-text-muted,
+    #555555
+  ); /* Slightly muted color for "Signed in as" */
+  padding-bottom: 0.75rem; /* Space below the greeting text */
+  margin-bottom: 0.5rem; /* Space before the next item (e.g., Logout button) */
+  border-bottom: 1px solid var(--color-border, #e0e0e0); /* Separator line */
+  cursor: default; /* This item is not clickable */
+  font-size: 0.9rem; /* Slightly smaller font for this info text */
+}
+
+.header-profile-dropdown .user-greeting-item strong {
+  color: var(--color-text, #333333); /* Make email more prominent */
+  font-weight: 500; /* Or 600 for bolder */
+  display: block; /* Ensure email is on its own line if needed */
+  margin-top: 0.25rem; /* Small space above the email */
+}
+
+/* Ensure no hover effect for the greeting item itself if it's just informational */
+.header-profile-dropdown .user-greeting-item:hover {
+  background-color: transparent;
+  color: var(--color-text-muted, #555555); /* Keep original text color */
+}
+
+/* Styling for the logout button within the header dropdown */
+.header-profile-dropdown .logout-item {
+  color: var(--color-danger, #dc3545); /* Use a danger color for logout */
+}
+
+.header-profile-dropdown .logout-item:hover {
+  background-color: var(--color-danger-hover, #c82333);
+  color: var(
+    --color-primary-accent-text,
+    #ffffff
+  ); /* Text color on danger hover */
+}
+
+/* Ensure the trigger button in the header is styled appropriately */
+.header-profile-trigger {
+  /* Your existing styles are likely fine, but ensure it aligns well */
+  background: none;
+  border: none; /* Or a subtle border */
+  color: var(--color-text);
+  padding: 0.5rem 0.75rem; /* Adjust padding to fit your header */
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem; /* Or match header font size */
+}
+.header-profile-trigger:hover {
+  background-color: var(--color-background-hover, #f0f0f0);
+}
+.header-profile-trigger .dropdown-arrow {
+  margin-left: 0.5rem;
+  font-size: 0.7em;
+  transition: transform 0.2s ease-in-out;
+}
+.header-profile-trigger .dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+/* s:\Cloned Projects\Practice-projects\route practice\src\index.css */
+
+/* ... your existing styles ... */
+
+/* Styles for the profile dropdown trigger button in the HEADER */
+.header-profile-trigger {
+  background-color: var(
+    --color-primary-accent,
+    #007bff
+  ); /* Example background */
+  color: var(--color-primary-accent-text, #ffffff);
+  border: none;
+  border-radius: 50%; /* Makes it round */
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  padding: 0; /* Remove padding to let content center */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content (initials and arrow) */
+  font-size: 1rem; /* Base font size for content inside */
+  position: relative; /* For positioning the arrow if needed, though flex handles it well */
+  overflow: hidden; /* Ensures content stays within the circle */
+  transition: background-color 0.2s ease;
+}
+
+.header-profile-trigger:hover {
+  background-color: var(
+    --color-primary-accent-hover,
+    #0056b3
+  ); /* Darken on hover */
+}
+
+.header-profile-trigger .profile-icon-initials {
+  font-size: 1.2rem; /* Size of the letter */
+  font-weight: 500;
+  line-height: 1; /* Helps with vertical centering */
+}
+
+/* Improved Dropdown Arrow Styling */
+.header-profile-trigger .dropdown-arrow {
+  /* Remove margin-left if using flexbox for centering */
+  /* margin-left: 0.5rem; */
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent; /* Adjust size of arrow */
+  border-right: 5px solid transparent; /* Adjust size of arrow */
+  border-top: 6px solid var(--color-primary-accent-text, #ffffff); /* Arrow color, pointing down */
+  transition: transform 0.2s ease-in-out;
+  margin-left: 6px; /* Space between initials and arrow */
+}
+
+.header-profile-trigger .dropdown-arrow.open {
+  transform: rotate(180deg); /* Flips arrow up when menu is open */
+}
+
+/* Ensure the container for the dropdown trigger in the header has relative positioning */
+.app-header nav .profile-menu-widget-container {
+  position: relative;
+  margin-left: 0.75rem;
+  display: flex; /* Helps align button if there are other elements */
+  align-items: center;
+}
+
+/* Styles for the dropdown menu itself (ensure z-index is high) */
+.header-profile-dropdown {
+  position: absolute;
+  top: calc(
+    100% + 8px
+  ); /* Position below the trigger button with a small gap */
+  right: 0;
+  background-color: var(--color-background-card, #ffffff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 0.375rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1050; /* CRUCIAL for appearing above other content */
+  min-width: 240px; /* Adjust as needed */
+  padding: 0.5rem 0;
+  /* margin-top: 0.25rem; /* Replaced by calc in top */
+  list-style: none;
+}
+
+/* General style for items within any dropdown menu on the page */
+.profile-dropdown-menu-on-page .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--color-text, #333333);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.profile-dropdown-menu-on-page .dropdown-item:hover {
+  background-color: var(--color-background-hover, #f5f5f5);
+  color: var(--color-text-hover, var(--color-primary-accent));
+}
+/* In your index.css */
+
+/* Wrapper for the PreviewCard in the header */
+.header-profile-preview-card-wrapper {
+  position: relative; /* Important for positioning the PreviewCardContent */
+  margin-left: 0.75rem; /* Or your desired spacing */
+}
+/* Add or modify these styles in your s:\Cloned Projects\Practice-projects\route practice\src\index.css */
+
+/* Styles for the profile trigger button ON THE PROFILE PAGE */
+.profile-preview-trigger {
+  background-color: var(
+    --color-primary-accent,
+    #007bff
+  ); /* Or a more neutral color if preferred */
+  color: var(--color-primary-accent-text, #ffffff); /* Color of the initial */
+  border: none;
+  border-radius: 50%; /* Makes it round */
+  width: 36px; /* Smaller, more icon-like size */
+  height: 36px; /* Smaller, more icon-like size */
+  padding: 0; /* Remove padding to let content center precisely */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem; /* Base font size for the initial, can be adjusted */
+  overflow: hidden; /* Ensures content stays within the circle */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  /* Optional: Add a subtle shadow for depth */
+  /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); */
+}
+
+.profile-preview-trigger:hover {
+  background-color: var(
+    --color-primary-accent-hover,
+    #0056b3
+  ); /* Darken on hover */
+  /* Optional: Slightly larger shadow on hover */
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.15); */
+}
+
+.profile-preview-trigger:focus {
+  outline: none; /* Remove default outline if you add a custom one */
+  box-shadow: 0 0 0 2px var(--color-background, #000000),
+    0 0 0 4px var(--color-primary-accent, #007bff); /* Google-like focus ring */
+}
+
+.profile-icon-initials-page {
+  font-size: 0.95rem; /* Adjust size of the letter to fit the smaller button */
+  font-weight: 500; /* Or 600 for slightly bolder */
+  line-height: 1; /* Helps with vertical centering of the character */
+  text-transform: uppercase; /* Ensure it's uppercase */
+}
+
+/* Styles for the PreviewCardContent itself (the card that opens) */
+.profile-preview-content-card {
+  /* This class is on PreviewCardContent in userprofile.jsx */
+  background-color: var(--color-background-card, #fff);
+  border: 1px solid var(--color-border, #ececec);
+  border-radius: 0.5rem; /* A slightly larger radius for the card */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  z-index: 1000; /* Ensure it's on top if it's a pop-up/hover card */
+  /* Tailwind's w-72 is width: 18rem; you can set a specific width here if not using Tailwind for it */
+  /* width: 280px; */
+}
+
+/* Styling for the logout button within the PreviewCard */
+.preview-card-logout-button {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  background-color: transparent;
+  color: var(--color-danger, #000000);
+  border: 1px solid transparent; /* Make it look more like a menu item */
+  border-radius: 0.375rem;
+  text-align: left; /* Align text to the left like a menu item */
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.preview-card-logout-button:hover {
+  background-color: var(
+    --color-danger-hover-bg,
+    rgba(0, 0, 0, 0.1)
+  ); /* Subtle background on hover */
+  color: var(
+    --color-danger-hover-text,
+    var(--color-danger)
+  ); /* Keep text color or slightly darken */
+}
+
+/* If you're using Tailwind classes like 'text-muted-foreground' from the example,
+   ensure your Tailwind config or global CSS defines what these mean, or replace them
+   with your own theme variables. Example: */
+.text-muted-foreground {
+  /* This is a Tailwind class, provide your equivalent */
+  color: var(--color-text-muted, #6c757d);
+}
+.font-semibold {
+  font-weight: 600;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.p-4 {
+  padding: 1rem;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+hr.my-2 {
+  border-top-width: 1px;
+  border-color: var(--color-border);
+}
+
+/* Your existing .header-profile-trigger styles should mostly work */
+/* .header-profile-trigger { ... } */
+/* .profile-icon-initials { ... } */
+
+/* Styling for the content card specifically in the header */
+.header-profile-preview-content-card {
+  background-color: var(--color-background-card, #000000);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: 0.5rem; /* Example */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1050; /* Ensure it's on top */
+  /* Tailwind's w-72 is width: 18rem; */
+}
+
+/* If not using Tailwind, define these or apply styles directly */
+.header-profile-preview-content-card .flex {
+  display: flex;
+}
+.header-profile-preview-content-card .flex-col {
+  flex-direction: column;
+}
+.header-profile-preview-content-card .gap-3 {
+  gap: 0.75rem;
+}
+.header-profile-preview-content-card .p-4 {
+  padding: 1rem;
+}
+.header-profile-preview-content-card .text-center {
+  text-align: center;
+}
+.header-profile-preview-content-card .font-semibold {
+  font-weight: 600;
+}
+.header-profile-preview-content-card .text-lg {
+  font-size: 1.125rem;
+}
+.header-profile-preview-content-card .text-sm {
+  font-size: 0.875rem;
+}
+.header-profile-preview-content-card .text-muted-foreground {
+  color: var(--color-text-muted, #6c757d);
+}
+.header-profile-preview-content-card .my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.header-profile-preview-content-card hr {
+  border-top-width: 1px;
+  border-color: var(--color-border);
+}
+
+.preview-card-logout-button {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background-color: transparent;
+  color: var(--color-danger, #fff9f9);
+  border: 1px solid transparent; /* Or a subtle border */
+  border-radius: 0.375rem;
+  text-align: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.preview-card-logout-button:hover {
+  background-color: var(
+    --color-danger-hover-bg,
+    var(--color-danger)
+  ); /* Use a specific var or fallback */
+  color: var(--color-danger-hover-text, #fff);
+  border-color: var(--color-danger-hover-bg, var(--color-danger));
+}
+
+/* Specific styling for the user greeting item within the header dropdown */
+.header-profile-dropdown .user-greeting-item {
+  color: var(--color-text-muted, #c51313);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+  cursor: default;
+  font-size: 0.9rem;
+}
+
+.header-profile-dropdown .user-greeting-item strong {
+  color: var(--color-text, #333333);
+  font-weight: 500;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.header-profile-dropdown .user-greeting-item:hover {
+  background-color: transparent;
+  color: var(--color-text-muted, #555555);
+}
+
+/* Styling for the logout button within the header dropdown */
+.header-profile-dropdown .logout-item {
+  color: var(--color-danger, #dc3545);
+}
+
+.header-profile-dropdown .logout-item:hover {
+  background-color: var(--color-danger-hover, #c82333);
+  color: var(--color-primary-accent-text, #ffffff);
+}
+
+/* === Profile Page Styles === */
+
+.profile-page-container {
+  display: flex;
+  /* Adjust 70px if your header height is different or managed dynamically */
+  min-height: calc(100vh - 70px);
+  /* background-color: var(--background-color, #fff);  */
+  /* background-color: transparent; */
+  /* background-color: var(--background-color, #fff); */
+   /* Main page background */
+  color: var(--text-color, #ddd2d2); /* Default text color for the profile page */
+  /* font-variant-caps: all-petite-caps; */
+  /* Main page background */
+}
+
+.profile-sidebar {
+  width: 250px;
+  flex-shrink: 0; /* Prevents sidebar from shrinking if content is too wide */
+  /* border-right: 1px solid var(--border-color, #e0e0e0); */
+  padding: 1.5rem 1rem;
+  /* background-color: var(--sidebar-bg, #f8f9fa); */
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600%;
+  box-sizing: border-box;
+}
+
+.profile-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--text-color-strong, #333);
+}
+
+.profile-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Pushes the logout section to the bottom */
+}
+
+.profile-sidebar li {
+  margin-bottom: 0.5rem;
+  background-color: rgb(42, 55, 70);
+}
+
+.sidebar-button {
+  background-origin: var(--color-bg);
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background-color: transparent;
+  border: 1px solid transparent; /* Maintain layout even without visible border */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text-color, #333);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+
+.sidebar-button:hover {
+  background-color: var(--hover-bg-color, #4c4a49);
+  border-color: var(--hover-border-color, #256eb7);
+}
+
+.sidebar-button.active {
+  cursor: default;
+  background-color: var(--primary-color, #1c4063);
+  color: var(--primary-contrast-text, rgb(248, 248, 248));
+  font-weight: bold;
+  border-color: var(--primary-color, #007bff);
+}
+
+.sidebar-logout-section {
+  margin-top: auto; /* Pushes this to the bottom of the flex container */
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.sidebar-logout-button {
+  /* Inherits .sidebar-button styles, then overrides */
+  background-color: var(--danger-color, #dc3545);
+  color: var(--danger-contrast-text, white);
+  font-weight: bold;
+  border-color: var(--danger-color, #dc3545);
+}
+
+.sidebar-logout-button:hover {
+  background-color: var(
+    --danger-hover-color,
+    #c82333
+  ); /* Darker shade for hover */
+  border-color: var(--danger-hover-color, #c82333);
+}
+
+.profile-main-content {
+  flex-grow: 1;
+  padding: 1.5rem 2rem;
+  overflow-y: auto; /* Allows content to scroll if it exceeds viewport height */
+  box-sizing: border-box;
+  /* background-color: transparent; */
+}
+
+.profile-section-card {
+  /* background-color: var(--card-bg, #ffffff); */
+  /* background-color: #000000;
+back */
+  background-color: transparent;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(215, 14, 14, 0.05);
+  /* Add margin if multiple cards might be stacked or for spacing */
+  /* margin-bottom: 1.5rem; */
+}
+
+.profile-section-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+  color: var(--text-color-strong, #212529);
+}
+
+.profile-section-card p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: var(--text-color, #495057);
+}
+
+.profile-section-card p strong {
+  color: var(--text-color-strong, #343a40);
+}
+
+.profile-section-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Utility class for muted text, if needed */
+.text-muted {
+  color: var(--text-color-muted, #6c757d);
+}
+
+/* ... rest of your styles ... */
+
+/* Ensure the container for the dropdown trigger in the header has relative positioning */
+.app-header nav .profile-menu-widget-container {
+  position: relative; /* This is crucial for the absolute positioning of the dropdown */
+  margin-left: 0.75rem; /* Example spacing */
+  
+}
+
+/* ... rest of your styles ... */
+
+.header-profile-trigger:hover {
+  /* background-color: var(--color-background-hover);  */
+  background-color: transparent; /* Example hover */
+}
+
+/* The .profile-dropdown-menu-on-page might need slight adjustments
+   if it's in the header, e.g., for z-index or exact positioning.
+   The class .header-profile-dropdown can be used for these overrides.
+*/
+.header-profile-dropdown {
+  /* Example: ensure it's above the sidebar if sidebar is also sticky/fixed */
+  z-index: 1051;
+  margin-top: 50%;
+  background-color: transparent;
+}
+
+.profile-dropdown-menu-on-page .user-greeting-item {
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  cursor: default;
+}
+.profile-dropdown-menu-on-page .user-greeting-item strong {
+  font-weight: 500;
+}
+
+/* ... other dropdown item styles (logout, arrow) ... */
+
+.app-container-with-sidebar.sidebar-closed .sidebar-header,
+.app-container-with-sidebar.sidebar-closed .sidebar-history {
+  opacity: 0;
+}
+
+/* Define color variables (example for a dark theme sidebar) */
+/* :root {
+  --color-background-sidebar: #202123;
+  --color-text-sidebar: #ececf1;
+  --color-border-sidebar: #3a3b3c;
+  --color-border-button-sidebar: #56585A;
+  --color-background-button-sidebar-hover: #2A2B2D;
+  --color-text-muted-sidebar: #8e8ea0;
+  --color-background-item-sidebar-hover: #2A2B2D;
+} */
+/* You'll also need light theme equivalents if you support theme switching */
+
+.generate-content-container button {
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem; /* 12px 24px */
+  font-size: 1rem; /* 16px */
+  margin-bottom: 0;
+  /* background-color: var(--color-bg-secondary); */
+  line-height: 1.6;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem; /* Add some space above the footer */
+  padding-top: 0.75rem; /* Add some space above the footer content */
+  border-top: 1px solid var(--color-border); /* Separator line */
+}
+
+.post-timestamp {
+  font-size: 0.8125rem; /* 13px */
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: 0.5rem;
+  /* text-align: right; No longer needed if using flexbox for footer */
+  margin-top: 0; /* Reset margin as it's handled by footer gap or alignment */
+}
+
+.post-action-button {
+  /* Uses general button styles, can add specifics if needed */
+  padding: 0.4rem 0.8rem; /* Smaller padding for action buttons within cards */
+  font-size: 0.875rem;
+}
+/* s:\Cloned Projects\Practice-projects\route practice\src\index.css */
+/* ... other styles ... */
+
+.post-action-button {
+  /* Inherits general button styles if you have a base .button class */
+  /* Or, style it specifically here */
+  display: inline-block; /* Important for <a> tags to behave like buttons */
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-primary-accent-text);
+  background-color: var(--color-primary-accent);
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  text-decoration: none; /* Remove underline from link */
+}
+
+.post-action-button:hover {
+  background-color: var(--color-primary-accent-hover);
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* ... other styles ... */
+
+/* -------------------------------------------------------------------------- */
+
+/* --- Error and Loading Messages --- */
+.error-message {
+  color: #ef4444; /* Tailwind's red-500 */
+  background-color: rgba(239, 68, 68, 0.1); /* Light red background */
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+body.dark-theme .error-message {
+  color: #f87171; /* Tailwind's red-400 for dark mode */
+  background-color: rgba(248, 113, 113, 0.15);
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
+.no-posts-message {
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: 2rem 0;
+  font-style: italic;
+}
+
+/* --- Posts Display --- */
+.posts-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between posts */
+}
+
+.post-card {
+  background-color: var(
+    --color-bg
+  ); /* Slightly different from container bg for definition */
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem; /* 8px */
+  padding: 1.25rem 1.5rem; /* 20px 24px */
+  box-shadow: var(--color-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* Space between elements inside the card */
+}
+
+.post-prompt {
+  font-size: 0.875rem; /* 14px */
+  color: var(--color-text-muted);
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.post-prompt strong {
+  color: var(--color-text-secondary);
+}
+
+.post-content p {
+  margin-bottom: 0.5em; /* Spacing for paragraphs within the content */
+  line-height: 1.6;
+}
+
+.post-timestamp {
+  font-size: 0.8125rem; /* 13px */
+  color: var(--color-text-muted);
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Utility Classes (Optional)                  */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                                Hero Section                                */
+/* -------------------------------------------------------------------------- */
+.hero-section {
+  /* align-items: center; */
+  /* Or var(--color-bg) for seamless look */
+  background-color: transparent;
+
+  padding: 4rem 1.5rem; /* Generous padding */
+  text-align: center; /* This is key for centering inline/inline-block children like text and buttons */
+  /* border-bottom: 1px solid var(--color-border); */
+  margin-bottom: 2rem; /* Space before the next content */
+}
+
+.hero-content {
+  /* align-items: center; */
+  margin-top: 75px;
+  max-width: 800px; /* Constrains the width */
+  margin-left: auto; /* Centers the block */
+  margin-right: auto; /* Centers the block */
+}
+.hero-title {
+  font-size: 2.75rem; /* Large, impactful title */
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+body.dark-theme .hero-title {
+  /* Optional: Slightly different color for dark theme if needed */
+  /* color: #f0f0f0; */
+}
+
+.hero-subtitle {
+  font-size: 1.125rem; /* Readable subtitle */
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 650px; /* Keep subtitle line length manageable */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta-button {
+  padding: 0.875rem 2rem; /* Larger CTA button */
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 0.5rem; /* Slightly more rounded */
+  box-shadow: var(--color-shadow-md);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Utility Classes (Optional)                  */
+/* -------------------------------------------------------------------------- */
+
+.info-card {
+  margin-top: 0.5rem; /* Reduced margin as it's part of the same container */
+  padding: 1.5rem; /* 24px */
+  background-color: var(--color-bg-tertiary);
+  border-radius: 0.5rem; /* 8px */
+  border: 1px solid var(--color-border);
+  font-size: 0.9375rem; /* 15px */
+  color: var(--color-text-secondary);
+  box-shadow: var(--color-shadow-sm);
+}
+.info-card p {
+  margin-bottom: 0.625em; /* Use em for paragraph spacing within card */
+  line-height: 1.7;
+}
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Utility Classes (Optional)                  */
+/* -------------------------------------------------------------------------- */
+.text-center {
+  text-align: center;
+}
+.sr-only {
+  /* Screen-reader only */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Add more utility classes as needed, e.g., for spacing, flexbox, etc. */
+/* Example: .mt-1 { margin-top: 0.25rem; } */
+
+/* -------------------------------------------------------------------------- */
+/*                             Responsive Design                              */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px; /* Slightly smaller base font for smaller screens */
+  }
+  .app-header {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .app-header nav {
+    width: 100%;
+    justify-content: space-between; /* Spread out nav items */
+  }
+  .app-header nav .user-greeting {
+    display: none; /* Hide greeting on small screens to save space, or shorten it */
+  }
+  .app-main-content {
+    padding: 1.5rem 1rem;
+  }
+  .auth-form-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+  .generate-content-container {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+  }
+  .generate-content-container input[type="text"] {
+    font-size: 1rem;
+    /* background-color: transparent  */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.875rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+  button.theme-toggle {
+    padding: 0.4rem 0.6rem;
+  }
+  .app-header nav {
+    gap: 0.5rem; /* Tighter gap for very small screens */
+  }
+  .app-header nav button {
+    /* Make nav buttons smaller */
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8125rem;
+  }
+}
+/* Add these styles to your s:\Cloned Projects\Practice-projects\route practice\src\index.css file */
+
+/* Hero Section Specific Styles */
+.hero-section {
+  text-align: center;
+  padding: 4rem 1rem; /* Increased padding for more space */
+  overflow: hidden; /* To ensure animations don't cause scrollbars prematurely */
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Larger font size */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--hero-text, #111827); /* Default dark color for hero text */
+
+  /* Gradient text effect */
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #6a0dad, #007cf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-size: 300% 300%; /* For animation */
+
+  /* Animation */
+  animation: textGradientAnimation 5s ease infinite,
+    /* Animated gradient */ fadeInUp 0.8s ease-out forwards; /* Fade in and slide up */
+  opacity: 0; /* Start hidden for fadeInUp */
+}
+
+.hero-subtitle {
+  font-size: 1.4rem; /* Slightly larger subtitle */
+  color: #d1d5db; /* A light gray, good for dark themes. Adjust if needed. */
+  margin-bottom: 2.5rem; /* More space before the button */
+  line-height: 1.6;
+  max-width: 700px; /* Constrain width for better readability */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Animation */
+  animation: fadeInUp 0.8s ease-out 0.3s forwards; /* Delay after title */
+  opacity: 0; /* Start hidden for fadeInUp */
+}
+
+.hero-cta-link {
+  display: inline-block; /* Allows transform and better spacing */
+  /* Animation */
+  animation: fadeInUp 0.8s ease-out 0.6s forwards; /* Delay after subtitle */
+  opacity: 0; /* Start hidden for fadeInUp */
+}
+
+.hero-cta-button {
+  padding: 0.9rem 2rem; /* Larger button */
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: #ff8a00; /* A vibrant color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.4); /* Subtle glow */
+}
+
+.hero-cta-button:hover {
+  background-color: #e52e71; /* Change color on hover */
+  transform: translateY(-3px) scale(1.05); /* Lift and slightly enlarge */
+  box-shadow: 0 6px 20px rgba(229, 46, 113, 0.5);
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Ensure your theme styles don't overly conflict. 
+   For example, if your dark theme sets a very specific color for all h1,
+   you might need to make the .hero-title selector more specific or use !important (use sparingly).
+*/
+
+/* Example: If your dark theme does this:
+html.dark-theme h1 { color: #eee; } 
+You might need:
+html.dark-theme .hero-title { 
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #6a0dad, #007cf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+*/
